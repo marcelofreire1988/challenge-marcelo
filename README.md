@@ -6,4 +6,4 @@ For scalability of this application, decide to use a **docker swarm** to provide
 
 The provisioning of these instances was create using **terraform**.
 
-The automation for install docker and start the swarm cluster with **ansible**.
+The automation for install docker and deploy the application with **ansible**.
