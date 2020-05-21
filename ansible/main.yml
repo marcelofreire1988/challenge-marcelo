@@ -1,0 +1,9 @@
+---
+- hosts: swarm-master
+  remote_user: ubuntu
+  become: yes 
+  roles:
+  - docker
+  - swarm-master
+  - deploy-app
+

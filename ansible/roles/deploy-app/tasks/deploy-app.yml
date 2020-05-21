@@ -1,0 +1,13 @@
+- name: Clone the github repository
+  git:
+    repo: https://github.com/marcelofreire1988/desafio.git
+    dest: /tmp/desafio
+ 
+- name: Deploy the challenge app
+  shell: docker stack deploy -c /tmp/desafio/docker/stack.yml challenge_app
+
+- name: Wait 15 seconds for the application to become available
+  shell: sleep 15
+
+- name: Verify if the app was running well
+  shell: curl localhost:80

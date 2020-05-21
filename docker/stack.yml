@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  challenge-nginx:
+      image: marcelofreire88/challenge
+      deploy: 
+        replicas: 3
+      networks:
+        - challenge
+      ports:
+        - 80:80
+
+networks:
+  challenge:
+    driver: overlay
+    attachable: true
+

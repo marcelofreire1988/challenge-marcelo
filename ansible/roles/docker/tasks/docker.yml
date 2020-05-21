@@ -1,0 +1,20 @@
+---
+#- hosts: aws
+#  become: yes
+#  tasks:
+  - name: Install Docker
+    shell: curl -fsSL https://get.docker.com | bash -
+
+  - name: Start service docker, if not running
+    service:
+      name: docker
+      state: started
+
+  - name: Get docker info
+    shell: docker info
+    register: docker_info
+    changed_when: False
+
+  - name: Test if the hello-world container is running
+    shell: docker run hello-world
+
